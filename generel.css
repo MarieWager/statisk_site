@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*** COLORS ***/
+:root {
+  --d_grey: #3b3939;
+  --beige: #f1efd8;
+  --blue: #6294f1;
+  --yellow: #f9f33d;
+}
+
+/*** FONTS ***/
+h1 {
+  font-family: "Braah One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--d_grey);
+  font-size: 400%;
+}
+h2 {
+  font-family: "Sulphur Point", serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 220%;
+  margin-top: 10vh;
+}
+p {
+  font-family: "Sulphur Point", serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #222020;
+  font-size: 150%;
+}
+
+header {
+  background-color: var(--beige);
+  padding: 2vh;
+}
+
+main {
+  padding: 2vh;
+}
+
+/*** CATEGORIES ***/
+.set_3x3 {
+  display: grid;
+  margin: 5vh;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+}
+
+/** BOXES **/
+.clc a {
+  text-decoration: none;
+}
+
+.clc {
+  background-color: var(--blue);
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.clc:hover {
+  background-color: var(--beige);
+  border-radius: 7rem;
+  transition: 0.8s ease;
+
+  animation-name: zoom_in_kf;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; /*keeps the animation in its final state/form*/
+}
+
+@keyframes zoom_in_kf {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.09);
+  }
+}
+
+/***** CARDS *****/
+.set_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+}
+
+.card {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  gap: inherit;
+
+  /*** STYLE ***/
+  border-style: solid;
+  border-color: var(--d_grey);
+}
+
+.img_so {
+  filter: grayscale(90%);
+}
+/** TEXT **/
+.link {
+}
+
+/*** MOBILE ***/
+@media (min-width: 800px) {
+  /*** CATEGORIES ***/
+  .set_3x3 {
+    grid-template-columns: 1fr;
+  }
+
+  /***** CARDS *****/
+  .set_container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+  }
+
+  .card {
+    grid-row: span 4;
+  }
+}
