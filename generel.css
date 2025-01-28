@@ -12,7 +12,9 @@ img {
 /*** COLORS ***/
 :root {
   --d_grey: #3b3939;
-  --beige: #f1efd8;
+  --l_grey: #726c69;
+  --beige: #e6dfcf;
+  --l_beige: #e6dfcf31;
   --blue: #6294f1;
   --yellow: #f9f33d;
 }
@@ -54,7 +56,7 @@ main {
   display: grid;
   margin: 5vh;
   gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: repeat(3, auto);
 }
 
@@ -94,42 +96,93 @@ main {
 .set_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(6, auto);
   gap: 20px;
 }
 
 .card {
+  position: relative;
   display: grid;
-  grid-row: span 2;
+  grid-row: span 8;
   grid-template-rows: subgrid;
-  gap: inherit;
+  gap: 10px;
 
-  /*** STYLE ***/
-  border-style: solid;
-  border-color: var(--d_grey);
+  background-color: var(--l_beige);
+  padding-bottom: 2vh;
 }
 
 .img_so {
   filter: grayscale(90%);
 }
 /** TEXT **/
-.link {
+.title,
+.cat,
+.article,
+.price {
+  padding: 1vh;
+}
+.cat,
+.article {
+  color: var(--l_grey);
+  font-size: 120%;
 }
 
-/*** MOBILE ***/
+.dis {
+  position: absolute;
+  padding: 2vh;
+  background-color: var(--yellow);
+  right: 0;
+  bottom: 40px;
+}
+
+.so {
+  position: absolute;
+  padding: 2vh;
+  background-color: var(--l_grey);
+  top: 0;
+  left: 0;
+}
+
+.link {
+  position: absolute;
+  margin-top: 5rem;
+  padding: 0.5vh;
+  bottom: 0;
+  left: 0;
+  font-family: "Sulphur Point", serif;
+  font-size: 130%;
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--d_grey);
+  border-bottom: 2px solid var(--d_grey);
+}
+
+/**** FOOTER ****/
+footer {
+  background-color: var(--beige);
+  margin-top: 15vh;
+  padding: 15vh;
+}
+.set_3 {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/*** DESKTOP ***/
 @media (min-width: 800px) {
   /*** CATEGORIES ***/
   .set_3x3 {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   /***** CARDS *****/
   .set_container {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, auto);
-  }
-
-  .card {
-    grid-row: span 4;
   }
 }
