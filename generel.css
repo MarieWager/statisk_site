@@ -14,7 +14,7 @@ img {
   --d_grey: #3b3939;
   --l_grey: #726c69;
   --beige: #e6dfcf;
-  --l_beige: #e6dfcf31;
+  --l_beige: #e6dfcf4a;
   --blue: #6294f1;
   --yellow: #f9f33d;
 }
@@ -182,7 +182,7 @@ main {
 
 .order {
   position: relative;
-  background-color: var(--beige);
+  background-color: var(--l_beige);
   padding: 1vh;
 }
 
