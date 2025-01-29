@@ -38,13 +38,18 @@ p {
   font-family: "Sulphur Point", serif;
   font-weight: 300;
   font-style: normal;
-  color: #222020;
+  color: var(--d_grey);
   font-size: 150%;
 }
 
 header {
   background-color: var(--beige);
   padding: 2vh;
+}
+
+h1 a {
+  text-decoration: none;
+  color: var(--d_grey);
 }
 
 main {
@@ -161,11 +166,54 @@ main {
   border-bottom: 2px solid var(--d_grey);
 }
 
+/**** PRODUCT ****/
+.set_1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+
+  font-size: 70%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.order {
+  position: relative;
+  background-color: var(--beige);
+  padding: 1vh;
+}
+
+.add {
+  position: absolute;
+  background-color: var(--l_grey);
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 7rem;
+  bottom: 5%;
+  right: 5%;
+}
+
+.add:hover {
+  background-color: var(--blue);
+  border-radius: 7rem;
+  transition: 0.8s ease;
+
+  animation-name: zoom_in_kf;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; /*keeps the animation in its final state/form*/
+}
+
 /**** FOOTER ****/
 footer {
   background-color: var(--beige);
-  margin-top: 15vh;
-  padding: 15vh;
+  margin-top: 5rem;
+  padding: 5rem;
+  font-size: 50%;
 }
 .set_3 {
   display: grid;
@@ -184,5 +232,10 @@ footer {
   .set_container {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, auto);
+  }
+
+  /**** PRODUCT ****/
+  .order {
+    max-width: fit-content;
   }
 }
