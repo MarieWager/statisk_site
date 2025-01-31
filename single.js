@@ -5,7 +5,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
   .then((data) => {
     set_1.innerHTML = `
-    <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="1163">
+    <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="${productId}">
 
             <div>
                 <p class="bold">MODEL NAME</p>
