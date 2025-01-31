@@ -26,10 +26,13 @@ fetch(`"https://kea-alt-del.dk/t7/api/products/${productId}"`)
                 <p class="cat">${data.subcategory}</p>
                 <p class="article">${data.articletype}</p>
 
-                <p class="discount">${data.discount}</p>
-                <p class="soldout">${data.soldout}</p>
+                <p class="discount">Discount:
+                <br>
+                ${data.discount}</p>
+                <p class="soldout">Stock:
+                <br>${data.soldout}</p>
                 
-                <p>Price
+                <p>Price:
                 <br>
                 ${data.price}
                 </p>
