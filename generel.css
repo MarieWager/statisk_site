@@ -184,10 +184,12 @@ main {
   position: relative;
   background-color: var(--l_beige);
   padding: 1vh;
+  min-height: 25rem;
 }
 
 .add {
   position: absolute;
+  font-family: "Sulphur Point", serif;
   background-color: var(--l_grey);
   padding: 1rem;
   gap: 1rem;

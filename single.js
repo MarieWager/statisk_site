@@ -1,7 +1,7 @@
 let productId = 1163;
 let set_1 = document.querySelector(".set_1");
 
-fetch(`"https://kea-alt-del.dk/t7/api/products/${productId}"`)
+fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
   .then((data) => {
     set_1.innerHTML = `
@@ -29,7 +29,7 @@ fetch(`"https://kea-alt-del.dk/t7/api/products/${productId}"`)
                 <p class="discount">Discount:
                 <br>
                 ${data.discount}</p>
-                <p class="soldout">Stock:
+                <p class="soldout">Soldout:
                 <br>${data.soldout}</p>
                 
                 <p>Price:
@@ -40,3 +40,6 @@ fetch(`"https://kea-alt-del.dk/t7/api/products/${productId}"`)
                 <div class="add">Add to basket</div>
     </div> `;
   });
+
+/*null=none - der burde være en "show" med ifelse i think*/
+/*0=no - 1=yes*/
