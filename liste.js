@@ -1,6 +1,11 @@
+const myCategory = new URLSearchParams(window.location.search).get("category");
+
 const listContainer = document.querySelector(".set_container");
 
-fetch(`https://kea-alt-del.dk/t7/api/products`)
+const overskrift = document.querySelector("h2");
+overskrift.innerHTML = myCategory;
+
+fetch(`https://kea-alt-del.dk/t7/api/products?category=${myCategory}`)
   .then((response) => response.json())
   .then((data) => showList(data)); /*disse linjer kan bruges hver gang jeg skal hente data, nedenunder spcificere hvilken form for data det er*/
 
