@@ -6,10 +6,24 @@ fetch(`https://kea-alt-del.dk/t7/api/products`)
 
 function showList(products) {
   console.log(products);
-  let markup = "";
-  products
-    .map((product) => {
-      markup += ` <div class="card">
+  const markup = products
+    .map(
+      (product) => ` <div class="card">
+<img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.id}">
+
+                <p class="title">${product.productdisplayname}</p>
+                <p class="cat">${product.subcategory}</p>
+                <p class="article">${product.articletype}</p>
+                <p class="price">${product.price}</p>
+                <a href="produkt.html" class="link">Read More</a>
+            </div>`
+    )
+    .join("");
+  console.log(markup);
+  listContainer.innerHTML = markup; /*HTML SKAL VÆRE MED STORT!!!*/
+}
+
+/*this works*<div class="card">
 <img class="img_so" src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.id}">
                <p class="title">${product.productdisplayname}</p>
                 <p class="cat">${product.subcategory}</p>
@@ -22,20 +36,7 @@ function showList(products) {
                     <p>${product.soldout}</p>
                 </div>
                 <a href="produkt.html" class="link">Read More</a>
-            </div>`;
-    })
-    .join("");
-  console.log(markup);
-  listContainer.innerHTML = markup; /*HTML SKAL VÆRE MED STORT!!!*/
-}
 
-/*this works*<div class="card">
-<img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.id}">
 
-                <p class="title">${product.productdisplayname}</p>
-                <p class="cat">${product.subcategory}</p>
-                <p class="article">${product.articletype}</p>
-                <p class="price">${product.price}</p>
-                <a href="produkt.html" class="link">Read More</a>
     </div>
 */
