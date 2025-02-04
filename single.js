@@ -1,11 +1,12 @@
-let productId = 1163;
 let set_1 = document.querySelector(".set_1");
 
-fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
+const myProduct = new URLSearchParams(window.location.search).get("id");
+
+fetch(`https://kea-alt-del.dk/t7/api/products/${myProduct}/`)
   .then((response) => response.json())
   .then((data) => {
     set_1.innerHTML = `
-    <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="${productId}">
+    <img src="https://kea-alt-del.dk/t7/images/webp/640/${myProduct}.webp" alt="${myProduct}">
 
             <div>
                 <p class="bold">MODEL NAME</p>
@@ -15,7 +16,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
                 <p>${data.basecolour}</p>
 
                 <p class="bold">INVENTORY NUMBER</p>
-                <p>${productId}</p>
+                <p>${data.id}</p>
 
                 <p class="bold">BRANDS</p>
                 <p>${data.brandname}</p>
@@ -37,8 +38,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
                 ${data.price}
                 </p>
 
-                <div class="add">Add to basket</div>
-    </div> `;
+                <div class="add">Add to basket</div> `;
   });
 
 /*null=none - der burde være en "show" med ifelse i think*/

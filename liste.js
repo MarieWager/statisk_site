@@ -5,7 +5,7 @@ const listContainer = document.querySelector(".set_container");
 const overskrift = document.querySelector("h2");
 overskrift.innerHTML = myCategory;
 
-fetch(`https://kea-alt-del.dk/t7/api/products?category=${myCategory}`)
+fetch(`https://kea-alt-del.dk/t7/api/products/?category=${myCategory}`)
   .then((response) => response.json())
   .then((data) => showList(data)); /*disse linjer kan bruges hver gang jeg skal hente data, nedenunder spcificere hvilken form for data det er*/
 
@@ -20,7 +20,7 @@ function showList(products) {
                 <p class="cat">${product.subcategory}</p>
                 <p class="article">${product.articletype}</p>
                 <p class="price">${product.price}</p>
-                <a href="produkt.html" class="link">Read More</a>
+                <a href="produkt.html?id=${product.id}" class="link">Read More</a>
             </div>`
     )
     .join("");

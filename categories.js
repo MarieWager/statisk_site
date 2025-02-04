@@ -20,7 +20,7 @@ function showList(categories) {
 
 /********************/
 /*URL*/
-/*opretter "ny" url med den valgte værdi, i dette tilfælde category*/
+/*opretter "ny" url og "henter" (.get) med den valgte værdi, i dette tilfælde category*/
 const myCategory = new URLSearchParams(window.location.search).get("category");
 
 /*viser hvilken categori det er i konsol*/
