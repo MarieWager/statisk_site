@@ -97,6 +97,12 @@ main {
   }
 }
 
+/*** FILTER SECTION ***/
+#filterSelect {
+  padding: 1vh;
+  margin-bottom: 1vh;
+}
+
 /***** CARDS *****/
 .set_container {
   display: grid;
@@ -120,11 +126,15 @@ main {
 .title,
 .cat,
 .article,
+.gender,
+.brand,
 .price {
   padding: 1vh;
 }
 .cat,
-.article {
+.article,
+.gender,
+.brand {
   color: var(--l_grey);
   font-size: 120%;
 }
@@ -243,10 +253,5 @@ footer {
   .set_container {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, auto);
-  }
-
-  /**** PRODUCT ****/
-  .order {
-    /* max-width: fit-content;*/
   }
 }
