@@ -116,9 +116,6 @@ main {
   padding-bottom: 2vh;
 }
 
-.img_so {
-  filter: grayscale(90%);
-}
 /** TEXT **/
 .title,
 .cat,
@@ -133,6 +130,7 @@ main {
 }
 
 .dis {
+  display: none;
   position: absolute;
   padding: 2vh;
   background-color: var(--yellow);
@@ -141,6 +139,7 @@ main {
 }
 
 .so {
+  display: none;
   position: absolute;
   padding: 2vh;
   background-color: var(--l_grey);
@@ -187,6 +186,11 @@ main {
   min-height: 25rem;
 }
 
+.discount,
+.soldout {
+  display: none;
+}
+
 .add {
   position: absolute;
   font-family: "Sulphur Point", serif;
@@ -221,6 +225,11 @@ footer {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
+}
+
+/**** VISER CLASS ****/
+.vis {
+  display: block;
 }
 
 /*** DESKTOP ***/
