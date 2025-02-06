@@ -28,9 +28,9 @@ function applyFilter(products) {
   } else if (filterValue === "soldout") {
     filterProducts = products.filter((product) => product.soldout);
   } else if (filterValue === "puma") {
-    filterProducts = products.filter((product) => product.brandname === "puma");
+    filterProducts = products.filter((product) => product.brandname === "Puma");
   } else if (filterValue === "nike") {
-    filterProducts = products.filter((product) => product.brandname === "nike");
+    filterProducts = products.filter((product) => product.brandname === "Nike");
   } else if (filterValue === "women") {
     filterProducts = products.filter((product) => product.gender === "Women");
   } else if (filterValue === "men") {
