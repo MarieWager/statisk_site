@@ -20,6 +20,14 @@ function showList(products) {
                 <p class="cat">${product.subcategory}</p>
                 <p class="article">${product.articletype}</p>
                 <p class="price">${product.price}</p>
+
+                <div class="dis ${product.discount && "vis"}">
+                    <p>${product.discount}%</p>
+                </div>
+                <div class="so ${product.soldout && "vis"}">
+                    <p>Sold Out</p>
+                </div>
+
                 <a href="produkt.html?id=${product.id}" class="link">Read More</a>
             </div>`
     )

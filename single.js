@@ -18,7 +18,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${myProduct}/`)
                 <p class="bold">INVENTORY NUMBER</p>
                 <p>${data.id}</p>
 
-                <p class="bold">BRANDS</p>
+                <p class="bold">BRAND</p>
                 <p>${data.brandname}</p>
             </div>
 
@@ -27,16 +27,16 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${myProduct}/`)
                 <p class="cat">${data.subcategory}</p>
                 <p class="article">${data.articletype}</p>
 
-                <p class="discount">Discount:
-                <br>
-                ${data.discount}</p>
-                <p class="soldout">Soldout:
-                <br>${data.soldout}</p>
+                <p class="soldout ${data.soldout && "vis"}">Soldout:
+                <br>Yes</p>
                 
                 <p>Price:
                 <br>
                 ${data.price}
                 </p>
+                <p class="discount ${data.discount && "vis"}">Discount:
+                <br>
+                ${data.discount}%</p>
 
                 <div class="add">Add to basket</div> `;
   });
